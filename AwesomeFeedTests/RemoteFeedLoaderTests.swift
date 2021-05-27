@@ -6,24 +6,7 @@
 //
 
 import XCTest
-
-class RemoteFeedLoader {
-    let client: HTTPClient
-    let url: URL
-    
-    init(url: URL, client: HTTPClient) {
-        self.url = url
-        self.client = client
-    }
-    
-    func load() {
-        client.get(url: url)
-    }
-}
-
-protocol HTTPClient {
-    func get(url: URL)
-}
+import AwesomeFeed
 
 class RemoteFeedLoaderTests: XCTestCase {
     func test_init_withoutRequest() {
