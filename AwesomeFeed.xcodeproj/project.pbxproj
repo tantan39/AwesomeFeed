@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A7F6E76226600E18009B26E8 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F6E75826600E18009B26E8 /* AwesomeFeed.framework */; };
-		A7F6E76726600E18009B26E8 /* AwesomeFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E76626600E18009B26E8 /* AwesomeFeedTests.swift */; };
 		A7F6E76926600E18009B26E8 /* AwesomeFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = A7F6E75B26600E18009B26E8 /* AwesomeFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7F6E77626600F20009B26E8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E77526600F20009B26E8 /* FeedItem.swift */; };
 		A7F6E77A26600FE6009B26E8 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E77926600FE6009B26E8 /* FeedLoader.swift */; };
+		A7F6E78026601AF6009B26E8 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E77F26601AF6009B26E8 /* RemoteFeedLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +29,10 @@
 		A7F6E75B26600E18009B26E8 /* AwesomeFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwesomeFeed.h; sourceTree = "<group>"; };
 		A7F6E75C26600E18009B26E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7F6E76126600E18009B26E8 /* AwesomeFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7F6E76626600E18009B26E8 /* AwesomeFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeFeedTests.swift; sourceTree = "<group>"; };
 		A7F6E76826600E18009B26E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7F6E77526600F20009B26E8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		A7F6E77926600FE6009B26E8 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		A7F6E77F26601AF6009B26E8 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 		A7F6E76526600E18009B26E8 /* AwesomeFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7F6E76626600E18009B26E8 /* AwesomeFeedTests.swift */,
 				A7F6E76826600E18009B26E8 /* Info.plist */,
+				A7F6E77F26601AF6009B26E8 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = AwesomeFeedTests;
 			sourceTree = "<group>";
@@ -165,6 +165,7 @@
 					};
 					A7F6E76026600E18009B26E8 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -218,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F6E76726600E18009B26E8 /* AwesomeFeedTests.swift in Sources */,
+				A7F6E78026601AF6009B26E8 /* RemoteFeedLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AwesomeFeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -417,6 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.unittest.AwesomeFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -426,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AwesomeFeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
