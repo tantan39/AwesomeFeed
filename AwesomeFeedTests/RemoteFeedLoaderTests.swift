@@ -75,26 +75,14 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     func test_load_deliversListItemOn200HTTPResponseWithJSONList() {
         let (sut, client) = makeSUT()
+                
+        let item1 = makeItem(id: UUID(), description: nil, location: nil, url: URL(string: "https://a-url.com")!)
         
-        let item1 = FeedItem(id: UUID(), description: nil, location: nil, url: URL(string: "https://a-url.com")!)
+        let item2 = makeItem(id: UUID(), description: "a description", location: "a location", url: URL(string: "https://a-url.com")!)
         
-        let itemJSON1 = [ "id": item1.id.description,
-                          "description": item1.description,
-                          "location": item1.location,
-                          "image": item1.url.absoluteString
-        ]
+        let items = [item1.model, item2.model]
         
-        let item2 = FeedItem(id: UUID(), description: "a description", location: "a location", url: URL(string: "https://a-url.com")!)
-        
-        let itemJSON2 = [ "id": item2.id.description,
-                          "description": item2.description,
-                          "location": item2.location,
-                          "image": item2.url.absoluteString
-        ]
-        
-        let items = [item1, item2]
-        
-        let jsonItems = ["items": [itemJSON1, itemJSON2]]
+        let jsonItems = ["items": [item1.json, item2.json]]
         
         expect(sut, toCompleteWith: .success(items)) {
             let json = try! JSONSerialization.data(withJSONObject: jsonItems)
@@ -119,6 +107,22 @@ class RemoteFeedLoaderTests: XCTestCase {
         action()
         
         XCTAssertEqual(captureResults, [result], file: file, line: line)
+    }
+    
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, url: URL) -> (model: FeedItem, json: [String: Any])  {
+        let item = FeedItem(id: id, description: description, location: location, url: url)
+        let json = [ "id": item.id.description,
+                          "description": item.description,
+                          "location": item.location,
+                          "image": item.url.absoluteString
+        ]
+        .reduce(into: [String: Any]()) { (acc, element) in
+            if let value = element.value {
+                acc[element.key] = value
+            }
+        }
+        
+        return (item, json)
     }
     
     class HTTPClientSpy: HTTPClient {
