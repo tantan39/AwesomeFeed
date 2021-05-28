@@ -13,6 +13,8 @@
 		A7F6E77A26600FE6009B26E8 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E77926600FE6009B26E8 /* FeedLoader.swift */; };
 		A7F6E78026601AF6009B26E8 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E77F26601AF6009B26E8 /* RemoteFeedLoaderTests.swift */; };
 		A7F6E78526602A69009B26E8 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E78426602A69009B26E8 /* RemoteFeedLoader.swift */; };
+		A7F6E79926614E40009B26E8 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E79826614E40009B26E8 /* FeedItemsMapper.swift */; };
+		A7F6E79D26614E88009B26E8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E79C26614E88009B26E8 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		A7F6E77926600FE6009B26E8 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		A7F6E77F26601AF6009B26E8 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		A7F6E78426602A69009B26E8 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		A7F6E79826614E40009B26E8 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
+		A7F6E79C26614E88009B26E8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				A7F6E78426602A69009B26E8 /* RemoteFeedLoader.swift */,
+				A7F6E79C26614E88009B26E8 /* HTTPClient.swift */,
+				A7F6E79826614E40009B26E8 /* FeedItemsMapper.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -222,8 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F6E77A26600FE6009B26E8 /* FeedLoader.swift in Sources */,
+				A7F6E79D26614E88009B26E8 /* HTTPClient.swift in Sources */,
 				A7F6E78526602A69009B26E8 /* RemoteFeedLoader.swift in Sources */,
 				A7F6E77626600F20009B26E8 /* FeedItem.swift in Sources */,
+				A7F6E79926614E40009B26E8 /* FeedItemsMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,8 +440,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26H47KRRNN;
 				INFOPLIST_FILE = AwesomeFeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,8 +465,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26H47KRRNN;
 				INFOPLIST_FILE = AwesomeFeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
