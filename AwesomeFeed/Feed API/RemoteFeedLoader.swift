@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol HTTPClient {
-    func get(url: URL)
+    func get(url: URL, completion: (Error) -> Void)
 }
 
 public final class RemoteFeedLoader {
@@ -20,8 +20,14 @@ public final class RemoteFeedLoader {
         self.client = client
     }
     
-    public func load() {
-        client.get(url: url)
+    public enum Error: Swift.Error {
+        case connectionError
+    }
+    
+    public func load(completion: (Error) -> Void = { _ in }) {
+        client.get(url: url, completion: { error in
+            completion(.connectionError)
+        })
     }
 }
 
