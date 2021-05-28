@@ -82,10 +82,8 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         let items = [item1.model, item2.model]
         
-        let jsonItems = ["items": [item1.json, item2.json]]
-        
         expect(sut, toCompleteWith: .success(items)) {
-            let json = try! JSONSerialization.data(withJSONObject: jsonItems)
+            let json = makeJSONItems([item1.json, item2.json])
             client.complete(withStatusCode: 200, data: json)
         }
         
@@ -123,6 +121,11 @@ class RemoteFeedLoaderTests: XCTestCase {
         }
         
         return (item, json)
+    }
+    
+    private func makeJSONItems(_ items: [[String : Any]]) -> Data {
+        let json = ["items": items]
+        return try! JSONSerialization.data(withJSONObject: json)
     }
     
     class HTTPClientSpy: HTTPClient {
