@@ -24,7 +24,7 @@ public final class RemoteFeedLoader: FeedLoader {
     
     public typealias Results = LoadFeedResult<Error>
     
-    public func loadFeed(completion: @escaping (Results) -> Void) {
+    public func load(completion: @escaping (Results) -> Void) {
         client.get(url: url, completion: { [weak self] result in
             guard let _ = self else { return }
             
