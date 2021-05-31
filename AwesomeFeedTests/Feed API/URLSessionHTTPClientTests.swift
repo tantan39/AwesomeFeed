@@ -8,7 +8,7 @@
 import XCTest
 import AwesomeFeed
 
-class URLSessionHTTPClient {
+class URLSessionHTTPClient: HTTPClient {
     private let session: URLSession
     
     init(session: URLSession = .shared) {
@@ -19,7 +19,7 @@ class URLSessionHTTPClient {
         
     }
     
-    func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
+    func get(url: URL, completion: @escaping (HTTPClientResult) -> Void) {
         self.session.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -55,7 +55,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         
         let sut = makeSUT()
         
-        sut.get(from: url, completion: { _ in })
+        sut.get(url: url, completion: { _ in })
         
         wait(for: [expect], timeout: 1.0)
     }
@@ -107,7 +107,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
 
     // MARK: - Helpers
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> URLSessionHTTPClient {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
         let sut = URLSessionHTTPClient()
         trackMemoryLeaks(sut)
         return sut
@@ -149,7 +149,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         let expect = expectation(description: "waiting loader")
         
         var receiveResult: HTTPClientResult!
-        sut.get(from: url) { result in
+        sut.get(url: url) { result in
             receiveResult = result
             
             expect.fulfill()
