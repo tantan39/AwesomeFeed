@@ -23,7 +23,7 @@ class URLSessionHTTPClient {
         self.session.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 completion(.failure(error))
-            } else if let data = data, data.count > 0, let response = response as? HTTPURLResponse {
+            } else if let data = data, let response = response as? HTTPURLResponse {
                 completion(.success(data, response))
             } else {
                 completion(.failure(UnexpectedValueRepresentation()))
@@ -72,7 +72,6 @@ class URLSessionHTTPClientTests: XCTestCase {
         
         XCTAssertNotNil(resultErrorFor(data: nil, response: nil, error: nil))
         XCTAssertNotNil(resultErrorFor(data: nil, response: nonHTTPURLReponse(), error: nil))
-        XCTAssertNotNil(resultErrorFor(data: nil, response: anyHTTPURLResponse(), error: nil))
         XCTAssertNotNil(resultErrorFor(data: anyData(), response: nil, error: nil))
         XCTAssertNotNil(resultErrorFor(data: anyData(), response: nil, error: anyError()))
         XCTAssertNotNil(resultErrorFor(data: nil, response: nonHTTPURLReponse(), error: anyError()))
@@ -83,18 +82,18 @@ class URLSessionHTTPClientTests: XCTestCase {
 
     }
     
-    func test_getFromURL_suceedsOnHTTPURLResponseWithData() {
-        let data = anyData()
+    func test_getFromURL_suceedsWithEmptyDataOnHTTPURLResponseWithNilData() {
         let response = anyHTTPURLResponse()
 
-        URLProtocolStub.stub(data: data, response: response, error: nil)
+        URLProtocolStub.stub(data: nil, response: response, error: nil)
 
         let expect = expectation(description: "Waiting for HTTPURLResponse")
 
         makeSUT().get(from: anyURL()) { (result) in
             switch result {
             case let .success(receiveData, receiveResponse):
-                XCTAssertEqual(receiveData, data)
+                let emptyData = Data()
+                XCTAssertEqual(receiveData, emptyData)
                 XCTAssertEqual(receiveResponse.url, response.url)
                 XCTAssertEqual(receiveResponse.statusCode, response.statusCode)
             default:
