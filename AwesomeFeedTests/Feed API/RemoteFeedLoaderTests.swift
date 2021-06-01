@@ -8,7 +8,7 @@
 import XCTest
 import AwesomeFeed
 
-class RemoteFeedLoaderTests: XCTestCase {
+class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     func test_init_withoutRequest() {
         let client = HTTPClientSpy()
         let _ = makeSUT()
