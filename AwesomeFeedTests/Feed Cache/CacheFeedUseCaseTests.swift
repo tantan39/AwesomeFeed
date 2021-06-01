@@ -17,10 +17,12 @@ class LocalFeedLoader {
         self.currentDate = currentDate
     }
     
-    func save(_ items: [FeedItem]) {
+    func save(_ items: [FeedItem], completeion: @escaping (Error?) -> Void) {
         store.deleteCachedFeed { [unowned self] error in
             if error == nil {
                 self.store.insert(items, timestamp: self.currentDate())
+            } else {
+                completeion(error)
             }
         }
     }
@@ -69,7 +71,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
         let items = [uniqueItem(), uniqueItem()]
             
-        sut.save(items)
+        sut.save(items) { _ in }
         
         XCTAssertEqual(store.receiveMessages, [.deleteCachedFeed])
     }
@@ -79,7 +81,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let items = [uniqueItem(), uniqueItem()]
         let deletionError = anyError()
         
-        sut.save(items)
+        sut.save(items) { _ in }
         store.completeDeletion(with: deletionError)
         
         XCTAssertEqual(store.receiveMessages, [.deleteCachedFeed])
@@ -90,10 +92,27 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT(currentDate: { timestamp })
         let items = [uniqueItem(), uniqueItem()]
         
-        sut.save(items)
+        sut.save(items) { _ in }
         store.completeDeletionSuccessfully()
         
         XCTAssertEqual(store.receiveMessages, [.deleteCachedFeed, .insert(items, timestamp)])
+    }
+    
+    func test_save_failsOnDeletionError() {
+        let (sut, store) = makeSUT()
+        let items = [uniqueItem(), uniqueItem()]
+        let deletionError = anyError()
+        var receiveError: Error?
+        
+        let expect = expectation(description: "wait for save error")
+        sut.save(items) { error in
+            receiveError = error
+            expect.fulfill()
+        }
+        store.completeDeletion(with: deletionError)
+        wait(for: [expect], timeout: 1.0)
+        
+        XCTAssertEqual(receiveError as NSError?, deletionError)
     }
     
     // MARK: - Helpers
