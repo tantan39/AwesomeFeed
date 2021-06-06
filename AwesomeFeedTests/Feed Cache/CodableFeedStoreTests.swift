@@ -154,7 +154,7 @@ class CodableFeedStoreTests: XCTestCase {
             op3.fulfill()
         })
 
-        wait(for: completedOperationsInOrder, timeout: 5.0)
+        waitForExpectations(timeout: 5.0)
         
         XCTAssertEqual(completedOperationsInOrder, [op1, op2, op3], "Expected side-effects to run serially but operations finished in the wrong order")
     }
