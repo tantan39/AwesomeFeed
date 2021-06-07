@@ -25,21 +25,7 @@ class AwesomeFeedCacheIntegrationTests: XCTestCase {
     func test_load_deliversNoItemsOnEmptyCache() {
         let sut = makeSUT()
         
-        let exp = expectation(description: "Wait for load completion")
-        sut.load { result in
-            switch result {
-            case let .success(feed):
-                XCTAssertEqual(feed, [], "Expected empty feed")
-                
-            case let .failure(error):
-                XCTFail("Expected successful feed result, got \(error) instead")
-            }
-            
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 1.0)
-        
+        expect(sut, toLoad: [])
     }
     
     func test_load_deliversItemsSaveOnASeparateInstance() {
@@ -54,18 +40,7 @@ class AwesomeFeedCacheIntegrationTests: XCTestCase {
         })
         wait(for: [saveExp], timeout: 1.0)
         
-        let loadExp = expectation(description: "Wait for load completion")
-        sutToPerformLoad.load(completion: { result in
-            switch result {
-            case let .success(imageFeed):
-                XCTAssertEqual(imageFeed, feed)
-                
-            case let .failure(error):
-                XCTFail("Expected successful feed result, got \(error) instead")
-            }
-            loadExp.fulfill()
-        })
-        wait(for: [loadExp], timeout: 1.0)
+        expect(sutToPerformLoad, toLoad: feed)
         
     }
     
@@ -80,6 +55,23 @@ class AwesomeFeedCacheIntegrationTests: XCTestCase {
         return sut
     }
     
+    private func expect(_ sut: LocalFeedLoader, toLoad expectedFeed: [FeedImage]) {
+        let exp = expectation(description: "Wait for load completion")
+        sut.load { result in
+            switch result {
+            case let .success(loadedFeed):
+                XCTAssertEqual(loadedFeed, expectedFeed, "Expected empty feed")
+                
+            case let .failure(error):
+                XCTFail("Expected successful feed result, got \(error) instead")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+        
+    }
     
     private func setupEmptyStoreState() {
         deleteStoreArtifacts()
@@ -100,5 +92,4 @@ class AwesomeFeedCacheIntegrationTests: XCTestCase {
     private func cachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
-    
 }
