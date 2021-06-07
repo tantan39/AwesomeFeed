@@ -44,6 +44,31 @@ class AwesomeFeedCacheIntegrationTests: XCTestCase {
         
     }
     
+    func test_load_overridesItemsSavedOnASeparateInstance() {
+        let sutToPerformFirstSave = makeSUT()
+        let sutToPerformLastSave = makeSUT()
+        let sutToPerformLoad = makeSUT()
+        let firstFeed = uniqueImageFeed().models
+        let latestFeed = uniqueImageFeed().models
+        
+        let firstSaveExp = expectation(description: "Wait for save completion")
+        sutToPerformFirstSave.save(firstFeed, completion: { saveError in
+            XCTAssertNil(saveError, "Expected to save feed successfully")
+            firstSaveExp.fulfill()
+        })
+        wait(for: [firstSaveExp], timeout: 1.0)
+        
+        let lastSaveExp = expectation(description: "Wait for save completion")
+        sutToPerformLastSave.save(latestFeed, completion: { saveError in
+            XCTAssertNil(saveError, "Expected to save feed successfully")
+            lastSaveExp.fulfill()
+        })
+        wait(for: [lastSaveExp], timeout: 1.0)
+        
+        expect(sutToPerformLoad, toLoad: latestFeed)
+
+    }
+    
     // MARK: - Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> LocalFeedLoader {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
