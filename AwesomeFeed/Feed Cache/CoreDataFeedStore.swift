@@ -17,11 +17,51 @@ public class CoreDataFeedStore: FeedStore {
     }
     
     public func retrieve(completion: @escaping RetrievalCompletion) {
-        
-        completion(.empty)
+        let context = self.context
+        context.perform {
+            do {
+                let request = NSFetchRequest<ManageCache>(entityName: ManageCache.entity().name!)
+                request.returnsObjectsAsFaults = false
+                if let cache = try context.fetch(request).first {
+                    let feed = cache.feed
+                        .compactMap({ $0 as? ManageFeedImage})
+                        .map({
+                        LocalFeedImage(id: $0.id, description: $0.imageDescription, location: $0.location, url: $0.url)
+                    })
+                    
+                    completion(.found(feed: feed, timestamp: cache.timestamp))
+                    
+                } else {
+                    completion(.empty)
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }
     }
     
     public func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion) {
+        let context = self.context
+        context.perform {
+            do {
+                let manageCache = ManageCache(context: context)
+                manageCache.timestamp = timestamp
+                manageCache.feed = NSOrderedSet(array: feed.map({ local in
+                    let manageFeedImage = ManageFeedImage(context: context)
+                    manageFeedImage.id = local.id
+                    manageFeedImage.imageDescription = local.description
+                    manageFeedImage.location = local.location
+                    manageFeedImage.url = local.url
+                    return manageFeedImage
+                }))
+                
+                try context.save()
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+            
+        }
         
     }
     
@@ -43,9 +83,10 @@ private extension NSPersistentContainer {
         let description = NSPersistentStoreDescription(url: url)
         let container = NSPersistentContainer(name: name, managedObjectModel: model)
         container.persistentStoreDescriptions = [description]
+        
         var loadError: Swift.Error?
         container.loadPersistentStores(completionHandler: { loadError = $1 })
-        try loadError.map({ throw LoadingError.failedToLoadPersistentStores($0)})
+        try loadError.map { throw LoadingError.failedToLoadPersistentStores($0) }
         
         return container
     }
@@ -58,11 +99,13 @@ private extension NSManagedObjectModel {
     }
 }
 
+@objc(ManageCache)
 private class ManageCache: NSManagedObject {
     @NSManaged var timestamp: Date
     @NSManaged var feed: NSOrderedSet
 }
 
+@objc(ManageFeedImage)
 private class ManageFeedImage: NSManagedObject {
     @NSManaged var id: UUID
     @NSManaged var imageDescription: String?
