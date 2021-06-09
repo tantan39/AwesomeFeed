@@ -66,8 +66,12 @@ class AwesomeFeedCacheIntegrationTests: XCTestCase {
     
     private func save(_ feed: [FeedImage], with loader: LocalFeedLoader, file: StaticString = #filePath, line: UInt = #line) {
         let saveExp = expectation(description: "Wait for save completion")
-        loader.save(feed, completion: { saveError in
-            XCTAssertNil(saveError, "Expected to save feed successfully")
+        loader.save(feed, completion: { result in
+            if case let Result.failure(error) = result {
+                
+                XCTAssertNil(error, "Expected to save feed successfully")
+            }
+            
             saveExp.fulfill()
         })
         wait(for: [saveExp], timeout: 1.0)
