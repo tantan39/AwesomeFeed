@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		A7051B892664222F00C46103 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		A7051B9326647E2B00C46103 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		A7051BA5266517EC00C46103 /* AwesomeFeedEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeFeedEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7051BA5266517EC00C46103 /* AwesomeFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7051BA7266517EC00C46103 /* AwesomeFeedEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeFeedEndToEndTests.swift; sourceTree = "<group>"; };
 		A7051BA9266517EC00C46103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C2ABC8266C5CF0004A6D61 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			children = (
 				A7F6E75826600E18009B26E8 /* AwesomeFeed.framework */,
 				A7F6E76126600E18009B26E8 /* AwesomeFeedTests.xctest */,
-				A7051BA5266517EC00C46103 /* AwesomeFeedEndToEndTests.xctest */,
+				A7051BA5266517EC00C46103 /* AwesomeFeedAPIEndToEndTests.xctest */,
 				A7C2ABF0266EBAEF004A6D61 /* AwesomeFeedCacheIntegrationTests.xctest */,
 			);
 			name = Products;
@@ -342,9 +342,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A7051BA4266517EC00C46103 /* AwesomeFeedEndToEndTests */ = {
+		A7051BA4266517EC00C46103 /* AwesomeFeedAPIEndToEndTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7051BAD266517EC00C46103 /* Build configuration list for PBXNativeTarget "AwesomeFeedEndToEndTests" */;
+			buildConfigurationList = A7051BAD266517EC00C46103 /* Build configuration list for PBXNativeTarget "AwesomeFeedAPIEndToEndTests" */;
 			buildPhases = (
 				A7051BA1266517EC00C46103 /* Sources */,
 				A7051BA2266517EC00C46103 /* Frameworks */,
@@ -355,9 +355,9 @@
 			dependencies = (
 				A7051BAC266517EC00C46103 /* PBXTargetDependency */,
 			);
-			name = AwesomeFeedEndToEndTests;
+			name = AwesomeFeedAPIEndToEndTests;
 			productName = AwesomeFeedEndToEndTests;
-			productReference = A7051BA5266517EC00C46103 /* AwesomeFeedEndToEndTests.xctest */;
+			productReference = A7051BA5266517EC00C46103 /* AwesomeFeedAPIEndToEndTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A7C2ABEF266EBAEF004A6D61 /* AwesomeFeedCacheIntegrationTests */ = {
@@ -454,7 +454,7 @@
 			targets = (
 				A7F6E75726600E18009B26E8 /* AwesomeFeed */,
 				A7F6E76026600E18009B26E8 /* AwesomeFeedTests */,
-				A7051BA4266517EC00C46103 /* AwesomeFeedEndToEndTests */,
+				A7051BA4266517EC00C46103 /* AwesomeFeedAPIEndToEndTests */,
 				A7C2ABEF266EBAEF004A6D61 /* AwesomeFeedCacheIntegrationTests */,
 			);
 		};
@@ -893,7 +893,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7051BAD266517EC00C46103 /* Build configuration list for PBXNativeTarget "AwesomeFeedEndToEndTests" */ = {
+		A7051BAD266517EC00C46103 /* Build configuration list for PBXNativeTarget "AwesomeFeedAPIEndToEndTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7051BAE266517EC00C46103 /* Debug */,
