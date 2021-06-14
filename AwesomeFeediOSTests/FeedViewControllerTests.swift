@@ -150,6 +150,28 @@ final class FeedViewControllerTests: XCTestCase {
         
     }
     
+    func test_feedImageViewRetryButton_isVisibleOnImageURLLoadError() {
+        let (sut, loader) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        loader.completeFeedLoading(with: [makeImage(), makeImage()])
+        
+        let view0 = sut.simulateFeedImageViewVisible(at: 0)
+        let view1 = sut.simulateFeedImageViewVisible(at: 1)
+        XCTAssertEqual(view0?.isShowRetryAction, false, "Expected no image for first view while loading first image")
+        XCTAssertEqual(view1?.isShowRetryAction, false, "Expected no image for seconde view while loading second image")
+        
+        let imageData = UIImage.make(withColor: .red).pngData()!
+        loader.completeImageLoading(with: imageData, at: 0)
+        XCTAssertEqual(view0?.isShowRetryAction, false, "Expected image for first view once first image loading completes successfully")
+        XCTAssertEqual(view1?.isShowRetryAction, false, "Expected no image state change for second view once first image loading completes successfully")
+        
+        loader.completeImageLoadingWithError(at: 1)
+        XCTAssertEqual(view0?.isShowRetryAction, false, "Expected no image state change for first view once second image loading completes successfully")
+        XCTAssertEqual(view1?.isShowRetryAction, true, "Expected image for second view once second image loading completes successfully")
+        
+    }
+    
     // MARK: - Helpers
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
         let loader = LoaderSpy()
@@ -305,6 +327,10 @@ private extension FeedImageCell {
     
     var renderedImage: Data? {
         return feedImageView.image?.pngData()
+    }
+    
+    var isShowRetryAction: Bool {
+        return !feedImageRetryButton.isHidden
     }
 }
 
