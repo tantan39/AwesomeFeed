@@ -8,18 +8,18 @@
 import UIKit
 import AwesomeFeed
 
-public protocol ImageLoader {
+public protocol FeedImageDataLoader {
     func loadImageData(from url: URL)
     func cancelImageDataLoad(from url: URL)
 }
 
 final public class FeedViewController: UITableViewController {
     private var feedLoader: FeedLoader?
-    private(set) var imageLoader: ImageLoader?
+    private(set) var imageLoader: FeedImageDataLoader?
     
     private var tableModel: [FeedImage] = []
     
-    public convenience init(feedLoader: FeedLoader, imageLoader: ImageLoader) {
+    public convenience init(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) {
         self.init()
         
         self.feedLoader = feedLoader

@@ -145,7 +145,7 @@ final class FeedViewControllerTests: XCTestCase {
         return FeedImage(id: UUID(), description: description, location: location, url: url)
     }
     
-    class LoaderSpy: FeedLoader, ImageLoader {
+    class LoaderSpy: FeedLoader, FeedImageDataLoader {
 
         // MARK: - FeedLoader
         
