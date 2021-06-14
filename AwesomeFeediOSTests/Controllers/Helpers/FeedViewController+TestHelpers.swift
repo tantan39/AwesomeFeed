@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AwesomeFeed
 import AwesomeFeediOS
 
 extension FeedViewController {
