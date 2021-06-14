@@ -52,4 +52,8 @@ final class FeedImageCellController {
     deinit {
         task?.cancel()
     }
+    
+    func cancelLoad() {
+        task?.cancel()
+    }
 }
