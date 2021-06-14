@@ -14,6 +14,7 @@
 		A7A3DEB126779DC3004CA150 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ACBC26759F4E004A6D61 /* FeedViewControllerTests.swift */; };
 		A7A3DEB326779E85004CA150 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB226779E85004CA150 /* FeedImageCell.swift */; };
 		A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */; };
+		A7A3DEB82677FE5A004CA150 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */; };
 		A7C2ABC9266C5CF0004A6D61 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ABC8266C5CF0004A6D61 /* CodableFeedStore.swift */; };
 		A7C2ABCB266C716C004A6D61 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ABCA266C716C004A6D61 /* FeedStoreSpecs.swift */; };
 		A7C2ABCD266C7254004A6D61 /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ABCC266C7254004A6D61 /* XCTestCase+FeedStoreSpecs.swift */; };
@@ -121,6 +122,7 @@
 		A7051BA9266517EC00C46103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DEB226779E85004CA150 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 		A7C2ABC8266C5CF0004A6D61 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		A7C2ABCA266C716C004A6D61 /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		A7C2ABCC266C7254004A6D61 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,40 @@
 			path = AwesomeFeedEndToEndTests;
 			sourceTree = "<group>";
 		};
+		A7A3DEB62677FE36004CA150 /* Feed Image Loader */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */,
+			);
+			path = "Feed Image Loader";
+			sourceTree = "<group>";
+		};
+		A7A3DEB92677FE70004CA150 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DEBB2677FE82004CA150 /* Views */,
+				A7A3DEBA2677FE79004CA150 /* Controllers */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
+		A7A3DEBA2677FE79004CA150 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7C2ACC52675B3A2004A6D61 /* FeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A7A3DEBB2677FE82004CA150 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DEB226779E85004CA150 /* FeedImageCell.swift */,
+				A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A7C2ABE3266EADDF004A6D61 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,9 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				A7C2AC6226725932004A6D61 /* Info.plist */,
-				A7C2ACC52675B3A2004A6D61 /* FeedViewController.swift */,
-				A7A3DEB226779E85004CA150 /* FeedImageCell.swift */,
-				A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */,
+				A7A3DEB62677FE36004CA150 /* Feed Image Loader */,
+				A7A3DEB92677FE70004CA150 /* Feed UI */,
 			);
 			path = AwesomeFeediOS;
 			sourceTree = "<group>";
@@ -678,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A3DEB82677FE5A004CA150 /* FeedImageDataLoader.swift in Sources */,
 				A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */,
 				A7C2ACC62675B3A2004A6D61 /* FeedViewController.swift in Sources */,
 				A7A3DEB326779E85004CA150 /* FeedImageCell.swift in Sources */,
