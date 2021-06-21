@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AwesomeFeed
 
 final class FeedImageCellController {
     private var viewModel: FeedImageViewModel<UIImage>
