@@ -6,17 +6,8 @@
 //
 
 import AwesomeFeed
-
-struct FeedViewModel {
-    var feed: [FeedImage]
-}
-
 protocol FeedView {
     func display(_ viewModel: FeedViewModel)
-}
-
-struct FeedLoadingViewModel {
-    var isLoading: Bool
 }
 
 protocol FeedLoadingView {
