@@ -13,6 +13,7 @@
 		A7051BAA266517EC00C46103 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F6E75826600E18009B26E8 /* AwesomeFeed.framework */; };
 		A75E7B1D2680EA170075E123 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B1C2680EA170075E123 /* FeedImageViewModel.swift */; };
 		A75E7B20268111120075E123 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B1F268111120075E123 /* FeedPresenter.swift */; };
+		A75E7B2226823B740075E123 /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B2126823B740075E123 /* FeedImagePresenter.swift */; };
 		A7A3DEB126779DC3004CA150 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ACBC26759F4E004A6D61 /* FeedViewControllerTests.swift */; };
 		A7A3DEB326779E85004CA150 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB226779E85004CA150 /* FeedImageCell.swift */; };
 		A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */; };
@@ -135,6 +136,7 @@
 		A7051BA9266517EC00C46103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75E7B1C2680EA170075E123 /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 		A75E7B1F268111120075E123 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		A75E7B2126823B740075E123 /* FeedImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagePresenter.swift; sourceTree = "<group>"; };
 		A7A3DEB226779E85004CA150 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				A75E7B1C2680EA170075E123 /* FeedImageViewModel.swift */,
 				A75E7B1F268111120075E123 /* FeedPresenter.swift */,
+				A75E7B2126823B740075E123 /* FeedImagePresenter.swift */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				A7A3DEB82677FE5A004CA150 /* FeedImageDataLoader.swift in Sources */,
 				A7A3DED026780686004CA150 /* FeedRefreshViewController.swift in Sources */,
 				A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */,
+				A75E7B2226823B740075E123 /* FeedImagePresenter.swift in Sources */,
 				A7C2ACC62675B3A2004A6D61 /* FeedViewController.swift in Sources */,
 				A7A3DEB326779E85004CA150 /* FeedImageCell.swift in Sources */,
 				A75E7B1D2680EA170075E123 /* FeedImageViewModel.swift in Sources */,
