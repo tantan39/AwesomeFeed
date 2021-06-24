@@ -10,7 +10,7 @@
         <!--Feed View Controller-->
         <scene sceneID="mQc-ze-MrX">
             <objects>
-                <tableViewController id="Psc-DV-Yfo" customClass="FeedViewController" customModule="Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Psc-DV-Yfo" customClass="FeedViewController" customModule="AwesomeFeediOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MC7-PW-gYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="540" id="FKS-kn-iSP" customClass="FeedImageCell" customModule="Prototype" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="540" id="FKS-kn-iSP" customClass="FeedImageCell" customModule="AwesomeFeediOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="40.5" width="414" height="540"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FKS-kn-iSP" id="h4f-Q2-fh4">
@@ -134,19 +134,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="refresh" destination="yXW-8G-HjT" eventType="valueChanged" id="ooU-0E-KY0"/>
+                            <action selector="refresh" destination="Psc-DV-Yfo" eventType="valueChanged" id="Elw-ZB-MOI"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshController" destination="yXW-8G-HjT" id="m58-fS-9gA"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8I-tL-pYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="yXW-8G-HjT" customClass="FeedRefreshViewController" customModule="AwesomeFeediOS" customModuleProvider="target">
-                    <connections>
-                        <outlet property="view" destination="gn7-4W-Tfy" id="nxo-YE-OAl"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="348" y="-188"/>
         </scene>
