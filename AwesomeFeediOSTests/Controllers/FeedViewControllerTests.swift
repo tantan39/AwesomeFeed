@@ -18,9 +18,9 @@ final class FeedViewControllerTests: XCTestCase {
         
         let bundle = Bundle(for: FeedViewController.self)
         let localizedKey = "FEED_VIEW_TITLE"
-        let localizedTitle = bundle.localizedString(forKey: localizeKey, value: nil, table: "Feed")
+        let localizedTitle = bundle.localizedString(forKey: localizedKey, value: nil, table: "Feed")
         
-        XCTAssertNotEqual(localizeKey, localizedTitle)
+        XCTAssertNotEqual(localizedKey, localizedTitle)
         XCTAssertEqual(sut.title, localizedTitle)
     }
     
