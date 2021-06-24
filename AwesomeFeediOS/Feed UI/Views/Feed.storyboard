@@ -76,6 +76,9 @@
                                                             <state key="normal" title="⟳">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="FKS-kn-iSP" eventType="touchUpInside" id="eof-kS-6ou"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,11 +120,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descriptionLabel" destination="ffQ-V3-EIh" id="U4x-Pu-vb6"/>
-                                    <outlet property="feedImageContainer" destination="7RI-6r-0tc" id="Qnb-wu-abb"/>
-                                    <outlet property="feedImageView" destination="WEC-If-vka" id="zvj-ap-QqX"/>
-                                    <outlet property="locationContainer" destination="hdK-t2-UDI" id="r31-0V-L4e"/>
-                                    <outlet property="locationLabel" destination="mhl-mr-Gpg" id="wvi-9W-sjm"/>
+                                    <outlet property="descriptionLabel" destination="ffQ-V3-EIh" id="2YB-I6-YBN"/>
+                                    <outlet property="feedImageContainer" destination="7RI-6r-0tc" id="cNy-cZ-zxI"/>
+                                    <outlet property="feedImageRetryButton" destination="R3T-uD-ejp" id="CfL-Os-Jw5"/>
+                                    <outlet property="feedImageView" destination="WEC-If-vka" id="WDO-EU-Kzy"/>
+                                    <outlet property="locationContainer" destination="hdK-t2-UDI" id="0p3-56-bS7"/>
+                                    <outlet property="locationLabel" destination="mhl-mr-Gpg" id="7T0-ae-Gt7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
