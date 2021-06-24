@@ -128,6 +128,7 @@
                         <connections>
                             <outlet property="dataSource" destination="Psc-DV-Yfo" id="GL5-4T-dJt"/>
                             <outlet property="delegate" destination="Psc-DV-Yfo" id="Se4-PB-N4Z"/>
+                            <outlet property="prefetchDataSource" destination="Psc-DV-Yfo" id="FTg-kW-CED"/>
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gn7-4W-Tfy">
