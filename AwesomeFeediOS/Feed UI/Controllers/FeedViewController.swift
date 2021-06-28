@@ -7,6 +7,10 @@
 
 import UIKit
 
+public final class ErrorView: UIView {
+    public var message: String?
+}
+
 protocol FeedViewControllerDelegate {
     func didRequestFeedRefresh()
 }
@@ -14,6 +18,8 @@ protocol FeedViewControllerDelegate {
 final public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView {
     
     var delegate: FeedViewControllerDelegate?
+    
+    public let errorView = ErrorView()
     
     var tableModel = [FeedImageCellController]() {
         didSet {
