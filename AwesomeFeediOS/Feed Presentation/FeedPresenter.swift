@@ -41,7 +41,7 @@ final class FeedPresenter {
     }
     
     func didStartLoadingFeed() {
-        self.errorView.display(FeedErrorViewModel(message: .none))
+        self.errorView.display(.noError)
         loadingView.display(FeedLoadingViewModel(isLoading: true))
     }
     
@@ -51,7 +51,7 @@ final class FeedPresenter {
     }
     
     func didFinishLoadingFeed(with error: Error) {
-        self.errorView.display(FeedErrorViewModel(message: feedLoadError))
+        self.errorView.display(.error(message: feedLoadError))
         loadingView.display(FeedLoadingViewModel(isLoading: false))
     }
 
