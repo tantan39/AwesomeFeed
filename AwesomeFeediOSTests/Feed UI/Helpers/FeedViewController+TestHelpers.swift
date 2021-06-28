@@ -41,7 +41,7 @@ extension FeedViewController {
     }
     
     var errorMessage: String? {
-        return errorView.message
+        return errorView?.message
     }
     
     func feedImageView(at row: Int) -> UITableViewCell? {
