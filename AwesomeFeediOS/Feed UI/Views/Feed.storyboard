@@ -36,6 +36,9 @@
                                 <constraint firstItem="xao-xg-ZOI" firstAttribute="top" secondItem="GmX-0f-63H" secondAttribute="top" id="Xs4-8a-OgM"/>
                                 <constraint firstAttribute="trailing" secondItem="xao-xg-ZOI" secondAttribute="trailing" id="tvl-WG-f5s"/>
                             </constraints>
+                            <connections>
+                                <outlet property="button" destination="xao-xg-ZOI" id="2VH-GV-NkW"/>
+                            </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="546-No-NlQ">
                             <rect key="frame" x="0.0" y="623.00000034679067" width="414" height="16"/>
