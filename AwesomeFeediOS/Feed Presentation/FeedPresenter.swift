@@ -6,6 +6,7 @@
 //
 
 import AwesomeFeed
+
 protocol FeedView {
     func display(_ viewModel: FeedViewModel)
 }
