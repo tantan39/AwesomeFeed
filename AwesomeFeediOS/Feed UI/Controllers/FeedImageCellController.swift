@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AwesomeFeed
+
 protocol FeedImageCellControllerDelegate {
     func didRequestImage()
     func didCancelImageRequest()
