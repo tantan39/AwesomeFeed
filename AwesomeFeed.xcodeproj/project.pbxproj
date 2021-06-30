@@ -20,6 +20,7 @@
 		A745A8DB268BF84200804545 /* FeedImagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8DA268BF84100804545 /* FeedImagePresenterTests.swift */; };
 		A745A8DD268C099300804545 /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8DC268C099300804545 /* FeedImagePresenter.swift */; };
 		A745A8DF268C0A6600804545 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8DE268C0A6600804545 /* FeedImageViewModel.swift */; };
+		A745A8E0268CAB8B00804545 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */; };
 		A75E7B282684BFCB0075E123 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75E7B272684BFCA0075E123 /* Feed.storyboard */; };
 		A75E7B2A2684C08B0075E123 /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75E7B292684C08B0075E123 /* Feed.xcassets */; };
 		A75E7B2C2684D5A50075E123 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B2B2684D5A50075E123 /* UITableView+Dequeueing.swift */; };
@@ -38,7 +39,6 @@
 		A75E7B59268A68EB0075E123 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F6E75826600E18009B26E8 /* AwesomeFeed.framework */; };
 		A7A3DEB326779E85004CA150 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB226779E85004CA150 /* FeedImageCell.swift */; };
 		A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */; };
-		A7A3DEB82677FE5A004CA150 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */; };
 		A7A3DEBE26780211004CA150 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEBD26780211004CA150 /* UIImage+TestHelpers.swift */; };
 		A7A3DEC026780259004CA150 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEBF26780259004CA150 /* UIRefreshControl+TestHelpers.swift */; };
 		A7A3DEC2267802A2004CA150 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEC1267802A2004CA150 /* UIButton+TestHelpers.swift */; };
@@ -339,14 +339,6 @@
 			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
-		A7A3DEB62677FE36004CA150 /* Feed Image Loader */ = {
-			isa = PBXGroup;
-			children = (
-				A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */,
-			);
-			path = "Feed Image Loader";
-			sourceTree = "<group>";
-		};
 		A7A3DEB92677FE70004CA150 /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,7 +450,6 @@
 			isa = PBXGroup;
 			children = (
 				A7C2AC6226725932004A6D61 /* Info.plist */,
-				A7A3DEB62677FE36004CA150 /* Feed Image Loader */,
 				A7A3DEB92677FE70004CA150 /* Feed UI */,
 			);
 			path = AwesomeFeediOS;
@@ -576,6 +567,7 @@
 			children = (
 				A7F6E77526600F20009B26E8 /* FeedImage.swift */,
 				A7F6E77926600FE6009B26E8 /* FeedLoader.swift */,
+				A7A3DEB72677FE59004CA150 /* FeedImageDataLoader.swift */,
 			);
 			path = "Feed Feature";
 			sourceTree = "<group>";
@@ -862,7 +854,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A3DEB82677FE5A004CA150 /* FeedImageDataLoader.swift in Sources */,
 				A75E7B4A268A228D0075E123 /* ErrorView.swift in Sources */,
 				A75E7B4F268A26750075E123 /* UIRefreshControl+Helpers.swift in Sources */,
 				A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */,
@@ -914,6 +905,7 @@
 				A745A8D6268B793500804545 /* FeedLoadingViewModel.swift in Sources */,
 				A7F6E78526602A69009B26E8 /* RemoteFeedLoader.swift in Sources */,
 				A7C2ABDA266D1A69004A6D61 /* FeedStore.xcdatamodeld in Sources */,
+				A745A8E0268CAB8B00804545 /* FeedImageDataLoader.swift in Sources */,
 				A7DC32DE2666F9ED0063A0BD /* LocalFeedImage.swift in Sources */,
 				A7DC32DA2666BFEC0063A0BD /* FeedStore.swift in Sources */,
 				A7DC32D82666BEF70063A0BD /* LocalFeedLoader.swift in Sources */,
