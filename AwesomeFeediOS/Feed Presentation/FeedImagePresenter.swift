@@ -24,7 +24,8 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
     }
 
     func didStartLoadingImageData(for model: FeedImage) {
-        view.display(FeedImageViewModel(
+        view.display(
+            FeedImageViewModel(
                         description: model.description, location: model.location,
                         image: nil,
                         isLoading: true,
