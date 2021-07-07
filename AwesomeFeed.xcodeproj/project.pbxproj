@@ -54,7 +54,7 @@
 		A7A3DECE2678052C004CA150 /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DECD2678052C004CA150 /* FeedViewControllerTests+Assertions.swift */; };
 		A7A3DED226780C19004CA150 /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DED126780C19004CA150 /* FeedImageCellController.swift */; };
 		A7A3DED52678107C004CA150 /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DED42678107C004CA150 /* FeedUIComposer.swift */; };
-		A7C222942695F59F00B8D297 /* LocalFeedImageDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C222932695F59F00B8D297 /* LocalFeedImageDataLoaderTests.swift */; };
+		A7C222942695F59F00B8D297 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C222932695F59F00B8D297 /* LoadFeedImageDataFromCacheUseCaseTests.swift */; };
 		A7C22296269620B000B8D297 /* LocalFeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C22295269620B000B8D297 /* LocalFeedImageDataLoader.swift */; };
 		A7C22298269620E300B8D297 /* FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C22297269620E300B8D297 /* FeedImageDataStore.swift */; };
 		A7C2ABC9266C5CF0004A6D61 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ABC8266C5CF0004A6D61 /* CodableFeedStore.swift */; };
@@ -201,7 +201,7 @@
 		A7A3DECD2678052C004CA150 /* FeedViewControllerTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Assertions.swift"; sourceTree = "<group>"; };
 		A7A3DED126780C19004CA150 /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
 		A7A3DED42678107C004CA150 /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
-		A7C222932695F59F00B8D297 /* LocalFeedImageDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImageDataLoaderTests.swift; sourceTree = "<group>"; };
+		A7C222932695F59F00B8D297 /* LoadFeedImageDataFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedImageDataFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		A7C22295269620B000B8D297 /* LocalFeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImageDataLoader.swift; sourceTree = "<group>"; };
 		A7C22297269620E300B8D297 /* FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataStore.swift; sourceTree = "<group>"; };
 		A7C2ABC8266C5CF0004A6D61 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
@@ -518,7 +518,7 @@
 				A7C2ABD0266D0BAE004A6D61 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */,
 				A7C2ABD2266D0CD8004A6D61 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */,
 				A7C2ABD4266D1245004A6D61 /* CoreDataFeedStoreTests.swift */,
-				A7C222932695F59F00B8D297 /* LocalFeedImageDataLoaderTests.swift */,
+				A7C222932695F59F00B8D297 /* LoadFeedImageDataFromCacheUseCaseTests.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -985,7 +985,7 @@
 				A7DC32E02667C0560063A0BD /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				A7C2ABCB266C716C004A6D61 /* FeedStoreSpecs.swift in Sources */,
 				A7051B8A2664222F00C46103 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
-				A7C222942695F59F00B8D297 /* LocalFeedImageDataLoaderTests.swift in Sources */,
+				A7C222942695F59F00B8D297 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */,
 				A7C2ABCD266C7254004A6D61 /* XCTestCase+FeedStoreSpecs.swift in Sources */,
 				A7C2ABD5266D1245004A6D61 /* CoreDataFeedStoreTests.swift in Sources */,
 				A75E7B55268A513A0075E123 /* FeedPresenterTests.swift in Sources */,
