@@ -19,7 +19,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
     func test_validateCache_deletesCacheOnRetrievalError() {
         let (sut, store) = makeSUT()
         
-        sut.validateCache()
+        sut.validateCache() { _ in }
         store.completeRetrieval(with: anyError())
         
         XCTAssertEqual(store.receiveMessages, [.retrieve, .deleteCachedFeed])
@@ -40,7 +40,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         let nonExpiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: 1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.validateCache()
+        sut.validateCache() { _ in }
         store.completeRetrieval(with: feed.local, timestamp: nonExpiredTimeStamp)
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
@@ -52,7 +52,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         let expirationTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge()
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.validateCache()
+        sut.validateCache() { _ in }
         store.completeRetrieval(with: feed.local, timestamp: expirationTimeStamp)
         
         XCTAssertEqual(store.receiveMessages, [.retrieve, .deleteCachedFeed])
@@ -64,7 +64,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         let expiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.validateCache()
+        sut.validateCache() { _ in }
         store.completeRetrieval(with: feed.local, timestamp: expiredTimeStamp)
         
         XCTAssertEqual(store.receiveMessages, [.retrieve, .deleteCachedFeed])
@@ -74,7 +74,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
         
-        sut?.validateCache()
+        sut?.validateCache() { _ in }
         sut = nil
         
         store.completeRetrieval(with: anyError())
