@@ -7,7 +7,7 @@
 
 import CoreData
 
-public class CoreDataFeedStore {
+public final class CoreDataFeedStore {
     private var container: NSPersistentContainer
     private let context: NSManagedObjectContext
     
@@ -24,4 +24,14 @@ public class CoreDataFeedStore {
         }
     }
     
+    private func cleanUpReferencesToPersistentStores() {
+        context.performAndWait {
+            let coordinator = self.container.persistentStoreCoordinator
+            try? coordinator.persistentStores.forEach(coordinator.remove)
+        }
+    }
+    
+    deinit {
+        cleanUpReferencesToPersistentStores()
+    }
 }
