@@ -13,10 +13,11 @@
 		A7C2233D2697CC3100B8D297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C2233B2697CC3100B8D297 /* Main.storyboard */; };
 		A7C2233F2697CC3700B8D297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C2233E2697CC3700B8D297 /* Assets.xcassets */; };
 		A7C223422697CC3700B8D297 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C223402697CC3700B8D297 /* LaunchScreen.storyboard */; };
-		A7C2234D2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2234C2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift */; };
+		A7C2234D2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2234C2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift */; };
 		A7C223672697D88B00B8D297 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223662697D88B00B8D297 /* AwesomeFeed.framework */; };
 		A7C223692697D88B00B8D297 /* AwesomeFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223682697D88B00B8D297 /* AwesomeFeediOS.framework */; };
 		A7C2236B2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2236A2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift */; };
+		A7C2236D2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2236C2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +40,12 @@
 		A7C223412697CC3700B8D297 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7C223432697CC3700B8D297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C223482697CC3700B8D297 /* AwesomeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7C2234C2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWithLocalFallbackFeedLoaderTests.swift; sourceTree = "<group>"; };
+		A7C2234C2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		A7C2234E2697CC3700B8D297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C223662697D88B00B8D297 /* AwesomeFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AwesomeFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C223682697D88B00B8D297 /* AwesomeFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AwesomeFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C2236A2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
+		A7C2236C2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 		A7C2234B2697CC3700B8D297 /* AwesomeAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7C2234C2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift */,
+				A7C2234C2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift */,
+				A7C2236C2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				A7C2234E2697CC3700B8D297 /* Info.plist */,
 			);
 			path = AwesomeAppTests;
@@ -229,7 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7C2234D2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift in Sources */,
+				A7C2236D2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
+				A7C2234D2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
