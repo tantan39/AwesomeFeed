@@ -16,6 +16,7 @@
 		A7C2234D2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2234C2697CC3700B8D297 /* RemoteWithLocalFallbackFeedLoaderTests.swift */; };
 		A7C223672697D88B00B8D297 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223662697D88B00B8D297 /* AwesomeFeed.framework */; };
 		A7C223692697D88B00B8D297 /* AwesomeFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223682697D88B00B8D297 /* AwesomeFeediOS.framework */; };
+		A7C2236B2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2236A2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		A7C2234E2697CC3700B8D297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C223662697D88B00B8D297 /* AwesomeFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AwesomeFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C223682697D88B00B8D297 /* AwesomeFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AwesomeFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7C2236A2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				A7C223352697CC3100B8D297 /* AppDelegate.swift */,
 				A7C223372697CC3100B8D297 /* SceneDelegate.swift */,
 				A7C223392697CC3100B8D297 /* ViewController.swift */,
+				A7C2236A2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift */,
 				A7C2233B2697CC3100B8D297 /* Main.storyboard */,
 				A7C2233E2697CC3700B8D297 /* Assets.xcassets */,
 				A7C223402697CC3700B8D297 /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			files = (
 				A7C2233A2697CC3100B8D297 /* ViewController.swift in Sources */,
 				A7C223362697CC3100B8D297 /* AppDelegate.swift in Sources */,
+				A7C2236B2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				A7C223382697CC3100B8D297 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
