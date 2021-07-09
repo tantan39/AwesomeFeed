@@ -17,7 +17,7 @@
                BlueprintIdentifier = "A7F6E75726600E18009B26E8"
                BuildableName = "AwesomeFeed.framework"
                BlueprintName = "AwesomeFeed"
-               ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+               ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,21 @@
             BlueprintIdentifier = "A7C2AC5E26725931004A6D61"
             BuildableName = "AwesomeFeediOS.framework"
             BlueprintName = "AwesomeFeediOS"
-            ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+            ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A7F6E75726600E18009B26E8"
+            BuildableName = "AwesomeFeed.framework"
+            BlueprintName = "AwesomeFeed"
+            ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A7C223312697CC3100B8D297"
+            BuildableName = "AwesomeApp.app"
+            BlueprintName = "AwesomeApp"
+            ReferencedContainer = "container:AwesomeApp.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -47,7 +61,7 @@
                BlueprintIdentifier = "A7C2ABEF266EBAEF004A6D61"
                BuildableName = "AwesomeFeedCacheIntegrationTests.xctest"
                BlueprintName = "AwesomeFeedCacheIntegrationTests"
-               ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+               ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -58,7 +72,7 @@
                BlueprintIdentifier = "A7051BA4266517EC00C46103"
                BuildableName = "AwesomeFeedAPIEndToEndTests.xctest"
                BlueprintName = "AwesomeFeedAPIEndToEndTests"
-               ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+               ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -69,7 +83,7 @@
                BlueprintIdentifier = "A7F6E76026600E18009B26E8"
                BuildableName = "AwesomeFeedTests.xctest"
                BlueprintName = "AwesomeFeedTests"
-               ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+               ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -80,7 +94,18 @@
                BlueprintIdentifier = "A7C2AC6626725932004A6D61"
                BuildableName = "AwesomeFeediOSTests.xctest"
                BlueprintName = "AwesomeFeediOSTests"
-               ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+               ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A7C223472697CC3700B8D297"
+               BuildableName = "AwesomeAppTests.xctest"
+               BlueprintName = "AwesomeAppTests"
+               ReferencedContainer = "container:AwesomeApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -108,7 +133,7 @@
             BlueprintIdentifier = "A7F6E75726600E18009B26E8"
             BuildableName = "AwesomeFeed.framework"
             BlueprintName = "AwesomeFeed"
-            ReferencedContainer = "container:AwesomeFeed.xcodeproj">
+            ReferencedContainer = "container:../AwesomeFeed/AwesomeFeed.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
