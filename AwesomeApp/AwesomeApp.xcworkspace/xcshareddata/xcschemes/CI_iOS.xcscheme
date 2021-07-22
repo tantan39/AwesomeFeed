@@ -108,6 +108,17 @@
                ReferencedContainer = "container:AwesomeApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A7B7053E26AA004200AAA833"
+               BuildableName = "AwesomeAppUIAcceptanceTests.xctest"
+               BlueprintName = "AwesomeAppUIAcceptanceTests"
+               ReferencedContainer = "container:AwesomeApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
