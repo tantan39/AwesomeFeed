@@ -7,6 +7,7 @@
 
 import UIKit
 import AwesomeFeed
+import AwesomeFeediOS
 
 final class WeakRefVirtualProxy<T: AnyObject> {
     private weak var object: T?

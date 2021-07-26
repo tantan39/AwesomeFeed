@@ -7,6 +7,7 @@
 
 import UIKit
 import AwesomeFeed
+import AwesomeFeediOS
 
 public final class FeedUIComposer {
     private init() {}
