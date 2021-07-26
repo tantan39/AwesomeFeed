@@ -92,6 +92,9 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WEC-If-vka">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="feed-image-view">
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3T-uD-ejp">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
@@ -142,6 +145,9 @@
                                         <constraint firstItem="Q2V-yi-LJi" firstAttribute="leading" secondItem="h4f-Q2-fh4" secondAttribute="leadingMargin" id="nET-fe-r0A"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="feed-image-cell">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="ffQ-V3-EIh" id="2YB-I6-YBN"/>
                                     <outlet property="feedImageContainer" destination="7RI-6r-0tc" id="cNy-cZ-zxI"/>
