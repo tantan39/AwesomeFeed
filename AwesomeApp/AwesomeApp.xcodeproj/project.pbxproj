@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7B7054226AA004200AAA833 /* AwesomeAppUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054126AA004200AAA833 /* AwesomeAppUIAcceptanceTests.swift */; };
+		A7B7054A26AEFA9C00AAA833 /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */; };
 		A7C223362697CC3100B8D297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223352697CC3100B8D297 /* AppDelegate.swift */; };
 		A7C223382697CC3100B8D297 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223372697CC3100B8D297 /* SceneDelegate.swift */; };
 		A7C2233A2697CC3100B8D297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223392697CC3100B8D297 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		A7B7053F26AA004200AAA833 /* AwesomeAppUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeAppUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B7054126AA004200AAA833 /* AwesomeAppUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeAppUIAcceptanceTests.swift; sourceTree = "<group>"; };
 		A7B7054326AA004200AAA833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 		A7C223322697CC3100B8D297 /* AwesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C223352697CC3100B8D297 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C223372697CC3100B8D297 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				A7C223352697CC3100B8D297 /* AppDelegate.swift */,
 				A7C223372697CC3100B8D297 /* SceneDelegate.swift */,
+				A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */,
 				A7C223392697CC3100B8D297 /* ViewController.swift */,
 				A7C2236A2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift */,
 				A7C2236E2698AF1900B8D297 /* FeedImageDataLoaderWithFallbackComposite.swift */,
@@ -333,6 +336,7 @@
 				A7C223362697CC3100B8D297 /* AppDelegate.swift in Sources */,
 				A7C2236B2698A53E00B8D297 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				A7C2237E269CC0A800B8D297 /* FeedLoaderCacheDecorator.swift in Sources */,
+				A7B7054A26AEFA9C00AAA833 /* DebuggingSceneDelegate.swift in Sources */,
 				A7C223382697CC3100B8D297 /* SceneDelegate.swift in Sources */,
 				A7C2236F2698AF1900B8D297 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				A7C22388269CCD2500B8D297 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
