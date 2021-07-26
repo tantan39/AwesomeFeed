@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A7B7054226AA004200AAA833 /* AwesomeAppUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054126AA004200AAA833 /* AwesomeAppUIAcceptanceTests.swift */; };
 		A7B7054A26AEFA9C00AAA833 /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */; };
+		A7B7054C26AF136800AAA833 /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054B26AF136800AAA833 /* SceneDelegateTests.swift */; };
 		A7C223362697CC3100B8D297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223352697CC3100B8D297 /* AppDelegate.swift */; };
 		A7C223382697CC3100B8D297 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223372697CC3100B8D297 /* SceneDelegate.swift */; };
 		A7C2233A2697CC3100B8D297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223392697CC3100B8D297 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		A7B7054126AA004200AAA833 /* AwesomeAppUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeAppUIAcceptanceTests.swift; sourceTree = "<group>"; };
 		A7B7054326AA004200AAA833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
+		A7B7054B26AF136800AAA833 /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		A7C223322697CC3100B8D297 /* AwesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C223352697CC3100B8D297 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C223372697CC3100B8D297 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				A7C223702698AF9000B8D297 /* Helpers */,
 				A7C2234C2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift */,
+				A7B7054B26AF136800AAA833 /* SceneDelegateTests.swift */,
 				A7C2236C2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				A7C22375269CB3FC00B8D297 /* FeedLoaderCacheDecoratorTests.swift */,
 				A7C2237F269CC5D500B8D297 /* FeedImageDataLoaderCacheDecoratorTests.swift */,
@@ -351,6 +354,7 @@
 				A7C22380269CC5D500B8D297 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
 				A7C2237A269CB8A900B8D297 /* XCTestCase+FeedLoader.swift in Sources */,
 				A7C22384269CC96100B8D297 /* XCTestCase+FeedImageDataLoader.swift in Sources */,
+				A7B7054C26AF136800AAA833 /* SceneDelegateTests.swift in Sources */,
 				A7C22376269CB3FC00B8D297 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				A7C22382269CC8D600B8D297 /* FeedImageDataLoaderSpy.swift in Sources */,
 				A7C2236D2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,

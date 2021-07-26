@@ -21,6 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+
+        configureWindow()
+    }
+    
+    func configureWindow() {
 //        let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed")!
         let remoteURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5db4155a4fbade21d17ecd28/1572083034355/essential_app_feed.json")!
         
@@ -40,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                                     primary: remoteImageLoader,
                                                                     fallback: localImageLoader))
         
-        window?.rootViewController = feedViewController
+        window?.rootViewController = UINavigationController(rootViewController: feedViewController)
         
     }
     
