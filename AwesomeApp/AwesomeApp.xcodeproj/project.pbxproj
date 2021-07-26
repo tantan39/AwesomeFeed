@@ -25,6 +25,8 @@
 		A7B7056A26AF525700AAA833 /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7055C26AF525600AAA833 /* FeedViewControllerTests+Assertions.swift */; };
 		A7B7056C26AF528700AAA833 /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7056B26AF528700AAA833 /* FeedUIIntegrationTests.swift */; };
 		A7B7056E26AF55AB00AAA833 /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7056D26AF55AB00AAA833 /* FeedAcceptanceTests.swift */; };
+		A7B7057026AF652B00AAA833 /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7056F26AF652B00AAA833 /* HTTPClientStub.swift */; };
+		A7B7057226AF654700AAA833 /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7057126AF654600AAA833 /* InMemoryFeedStore.swift */; };
 		A7C223362697CC3100B8D297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223352697CC3100B8D297 /* AppDelegate.swift */; };
 		A7C223382697CC3100B8D297 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223372697CC3100B8D297 /* SceneDelegate.swift */; };
 		A7C2233A2697CC3100B8D297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223392697CC3100B8D297 /* ViewController.swift */; };
@@ -78,6 +80,8 @@
 		A7B7056126AF525700AAA833 /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		A7B7056B26AF528700AAA833 /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		A7B7056D26AF55AB00AAA833 /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
+		A7B7056F26AF652B00AAA833 /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
+		A7B7057126AF654600AAA833 /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 		A7C223322697CC3100B8D297 /* AwesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C223352697CC3100B8D297 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C223372697CC3100B8D297 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				A7C22379269CB8A900B8D297 /* XCTestCase+FeedLoader.swift */,
 				A7C22381269CC8D600B8D297 /* FeedImageDataLoaderSpy.swift */,
 				A7C22383269CC96100B8D297 /* XCTestCase+FeedImageDataLoader.swift */,
+				A7B7056F26AF652B00AAA833 /* HTTPClientStub.swift */,
+				A7B7057126AF654600AAA833 /* InMemoryFeedStore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -347,10 +353,12 @@
 				A7B7054C26AF136800AAA833 /* SceneDelegateTests.swift in Sources */,
 				A7C22376269CB3FC00B8D297 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				A7C22382269CC8D600B8D297 /* FeedImageDataLoaderSpy.swift in Sources */,
+				A7B7057226AF654700AAA833 /* InMemoryFeedStore.swift in Sources */,
 				A7B7056A26AF525700AAA833 /* FeedViewControllerTests+Assertions.swift in Sources */,
 				A7C2236D2698A5F000B8D297 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				A7C2234D2697CC3700B8D297 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 				A7C22378269CB72900B8D297 /* FeedLoaderStub.swift in Sources */,
+				A7B7057026AF652B00AAA833 /* HTTPClientStub.swift in Sources */,
 				A7B7056726AF525700AAA833 /* FeedImageCell+TestHelpers.swift in Sources */,
 				A7B7056526AF525700AAA833 /* FeedViewController+TestHelpers.swift in Sources */,
 				A7B7056926AF525700AAA833 /* UIControl+TestHelpers.swift in Sources */,
