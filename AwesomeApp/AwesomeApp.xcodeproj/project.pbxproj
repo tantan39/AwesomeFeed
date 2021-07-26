@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7B7054A26AEFA9C00AAA833 /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */; };
 		A7B7054C26AF136800AAA833 /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054B26AF136800AAA833 /* SceneDelegateTests.swift */; };
 		A7B7055326AF522600AAA833 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7054F26AF522500AAA833 /* FeedImageDataLoaderPresentationAdapter.swift */; };
 		A7B7055426AF522600AAA833 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B7055026AF522500AAA833 /* FeedViewAdapter.swift */; };
@@ -61,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 		A7B7054B26AF136800AAA833 /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		A7B7054D26AF522400AAA833 /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		A7B7054E26AF522500AAA833 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			children = (
 				A7C223352697CC3100B8D297 /* AppDelegate.swift */,
 				A7C223372697CC3100B8D297 /* SceneDelegate.swift */,
-				A7B7054926AEFA9C00AAA833 /* DebuggingSceneDelegate.swift */,
 				A7B7055226AF522600AAA833 /* FeedUIComposer.swift */,
 				A7B7054E26AF522500AAA833 /* MainQueueDispatchDecorator.swift */,
 				A7B7055126AF522600AAA833 /* WeakRefVirtualProxy.swift */,
@@ -325,7 +322,6 @@
 				A7C2237E269CC0A800B8D297 /* FeedLoaderCacheDecorator.swift in Sources */,
 				A7B7055626AF522600AAA833 /* MainQueueDispatchDecorator.swift in Sources */,
 				A7B7055426AF522600AAA833 /* FeedViewAdapter.swift in Sources */,
-				A7B7054A26AEFA9C00AAA833 /* DebuggingSceneDelegate.swift in Sources */,
 				A7C223382697CC3100B8D297 /* SceneDelegate.swift in Sources */,
 				A7B7055326AF522600AAA833 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				A7B7055726AF522600AAA833 /* FeedLoaderPresentationAdapter.swift in Sources */,
