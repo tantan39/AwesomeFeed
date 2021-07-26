@@ -22,29 +22,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed")!
         let remoteURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5db4155a4fbade21d17ecd28/1572083034355/essential_app_feed.json")!
         
-        let session = URLSession(configuration: .ephemeral)
-        let remoteClient = URLSessionHTTPClient(session: session)
+        let remoteClient = makeRemoteClient()
         let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: remoteClient)
         let remoteImageLoader = RemoteFeedImageDataLoader(client: remoteClient)
         
-//        let localStoreURL = NSPersistentContainer.defaultDirectoryURL()
-//            .appendingPathComponent("feed-store-sqlite")
+        let localStoreURL = NSPersistentContainer.defaultDirectoryURL()
+            .appendingPathComponent("feed-store-sqlite")
         
-//        let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
-//        let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
-//        let localImageLoader = LocalFeedImageDataLoader(store: localStore)
-//
-//        let feedViewController = FeedUIComposer.feedComposedWith(feedLoader:
-//                                                                    FeedLoaderWithFallbackComposite(
-//                                                                        primary: FeedLoaderCacheDecorator(decoratee: remoteFeedLoader, cache: localFeedLoader),
-//                                                                        fallback: localFeedLoader),
-//                                                                 imageLoader: FeedImageDataLoaderWithFallbackComposite(
-//                                                                    primary: remoteImageLoader,
-//                                                                    fallback: localImageLoader))
+        let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
+        let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
+        let localImageLoader = LocalFeedImageDataLoader(store: localStore)
+
+        let feedViewController = FeedUIComposer.feedComposedWith(feedLoader:
+                                                                    FeedLoaderWithFallbackComposite(
+                                                                        primary: FeedLoaderCacheDecorator(decoratee: remoteFeedLoader, cache: localFeedLoader),
+                                                                        fallback: localFeedLoader),
+                                                                 imageLoader: FeedImageDataLoaderWithFallbackComposite(
+                                                                    primary: remoteImageLoader,
+                                                                    fallback: localImageLoader))
         
-        window?.rootViewController = FeedUIComposer.feedComposedWith(feedLoader: remoteFeedLoader, imageLoader: remoteImageLoader)
-//        window?.rootViewController = feedViewController
+        window?.rootViewController = feedViewController
         
+    }
+    
+    private func makeRemoteClient() -> HTTPClient {
+        switch UserDefaults.standard.string(forKey: "connectivity") {
+        case "offline":
+            return AlwaysFailingHTTPClient()
+            
+        default:
+            return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+        }
+    }
+    
+    private class AlwaysFailingHTTPClient: HTTPClient {
+        private class Task: HTTPClientTask {
+            func cancel() {}
+        }
+        
+        func get(url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+            completion(.failure(NSError(domain: "offline", code: 0)))
+            return Task()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
