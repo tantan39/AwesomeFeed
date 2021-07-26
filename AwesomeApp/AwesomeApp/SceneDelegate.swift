@@ -56,8 +56,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                                         primary: FeedLoaderCacheDecorator(decoratee: remoteFeedLoader, cache: localFeedLoader),
                                                                         fallback: localFeedLoader),
                                                                  imageLoader: FeedImageDataLoaderWithFallbackComposite(
-                                                                    primary: remoteImageLoader,
-                                                                    fallback: localImageLoader))
+                                                                    primary: localImageLoader,
+                                                                    fallback: FeedImageDataLoaderCacheDecorator(decoratee: remoteImageLoader, cache: localImageLoader)))
         
         window?.rootViewController = UINavigationController(rootViewController: feedViewController)
         
@@ -66,7 +66,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func makeRemoteClient() -> HTTPClient {
         return httpClient
     }
-
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
