@@ -9,6 +9,18 @@ import XCTest
 import AwesomeFeediOS
 @testable import AwesomeApp
 class SceneDelegateTests: XCTestCase {
+    
+    func test_configureWindow_setsWindowKeyAndVisible() {
+        let window = UIWindow()
+        let sut = SceneDelegate()
+        
+        sut.window = window
+        sut.configureWindow()
+        
+        XCTAssertTrue(window.isKeyWindow, "Expected window to be the key window")
+        XCTAssertFalse(window.isHidden, "Expected window to be visible")
+    }
+    
     func test_sceneWillConnectToSession_configuresRootViewController() {
         let sut = SceneDelegate()
         sut.window = UIWindow()
