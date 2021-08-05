@@ -12,7 +12,7 @@ class AwesomeFeedEndToEndTests: XCTestCase {
     
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
-        let loader = RemoteFeedLoader(url: feedTestServerURL, client: client)
+        let loader = RemoteLoader(url: feedTestServerURL, client: client, mapper: FeedItemsMapper.map)
         
         let exp = expectation(description: "Wait for load completion")
         
