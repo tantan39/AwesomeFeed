@@ -6,6 +6,7 @@
 //
 
 import AwesomeFeed
+import Combine
 
 final class MainQueueDispatchDecorator<T> {
     private let decoratee: T
@@ -18,16 +19,6 @@ final class MainQueueDispatchDecorator<T> {
         guard Thread.isMainThread else { return DispatchQueue.main.async(execute: completion) }
         
         completion()
-    }
-}
-
-extension MainQueueDispatchDecorator: FeedLoader where T == FeedLoader {
-    func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        self.decoratee.load { [weak self] result in
-            self?.dispatch {
-                completion(result)
-            }
-        }
     }
 }
 
