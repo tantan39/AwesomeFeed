@@ -9,41 +9,6 @@ import XCTest
 import AwesomeFeed
 
 class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
-
-    func test_init_withoutRequest() {
-        let client = HTTPClientSpy()
-        let _ = makeSUT()
-        
-        XCTAssertTrue(client.requestedURLs.isEmpty)
-    }
-    
-    func test_load_requestDataFromURL() {
-        let url = URL(string: "https://a-url.com")!
-        let (sut, client) = makeSUT()
-        sut.load(){ _ in }
-        
-        XCTAssertEqual(client.requestedURLs, [url])
-    }
-    
-    func test_loadTwice_requestDataFromURL_Twice() {
-        let url = URL(string: "https://a-url.com")!
-        let (sut, client) = makeSUT()
-        
-        sut.load(){ _ in }
-        sut.load(){ _ in }
-        
-        XCTAssertEqual(client.requestedURLs, [url, url])
-    }
-     
-    func test_load_responseError() {
-        let (sut, client) = makeSUT()
-        
-        expect(sut, toCompleteWith: failure(.connectionError)) {
-            let clientError = NSError(domain: "Test", code: 0)
-            client.completion(with: clientError)
-        }
-
-    }
     
     func test_load_responseErrorOnNon2xxHTTPResponse() {
         let (sut, client) = makeSUT()
@@ -107,21 +72,6 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
             }
         })
         
-    }
-    
-    func test_load_doesNotDeliverReultAfterInstanceHasBeenDellocated() {
-        let url = URL(string: "https://a-url.com")!
-        let client = HTTPClientSpy()
-        var sut: RemoteImageCommentsLoader? = RemoteImageCommentsLoader(url: url, client: client)
-        
-        var captureResults: [RemoteImageCommentsLoader.Result] = []
-        sut?.load(completion: { captureResults.append($0) })
-
-        sut = nil
-        client.complete(withStatusCode: 200, data: makeJSONItems([]))
-        
-        XCTAssertTrue(captureResults.isEmpty)
-
     }
     
     // MARK: - Helpers
