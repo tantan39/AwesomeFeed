@@ -15,7 +15,7 @@ class AwesomeFeedEndToEndTests: XCTestCase {
         
         let exp = expectation(description: "Wait for load completion")
         
-        var receivedResult: FeedLoader.Result?
+        var receivedResult: Swift.Result<[FeedImage], Error>?
         client.get(url: feedTestServerURL) { result in
             receivedResult = result.flatMap { (data, response) in
                 do {
