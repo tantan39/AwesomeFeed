@@ -13,7 +13,7 @@ class SharedLocalizationTests: XCTestCase {
         let table = "Shared"
         let bundle = Bundle(for: LoadResourcePresenter<Any, DummyView>.self)
         
-        assertLocalizedKeyAndValuesExits(bundle, table)
+        assertLocalizedKeyAndValuesExits(in: bundle, table)
     }
     
     private class DummyView: ResourceView {

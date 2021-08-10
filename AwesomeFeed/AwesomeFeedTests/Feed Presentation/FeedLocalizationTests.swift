@@ -11,10 +11,9 @@ import AwesomeFeed
 final class FeedLocalizationTests: XCTestCase {
     func test_localizedStrings_haveKeysAndValuesForAllSupportedLocalizations() {
         let table = "Feed"
-        let bunble = Bundle(for: FeedPresenter.self)
+        let bundle = Bundle(for: FeedPresenter.self)
         
-        assertLocalizedKeyAndValuesExits(bundle, table)
-
+        assertLocalizedKeyAndValuesExits(in: bundle, table)
     }
     
 }
