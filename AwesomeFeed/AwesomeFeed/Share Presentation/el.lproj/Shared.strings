@@ -1,0 +1,9 @@
+/* 
+ Shared.strings
+  AwesomeFeed
+
+  Created by Tan Tan on 8/10/21.
+  
+*/
+"GENERIC_VIEW_CONNECTION_ERROR" = "Couldn't connect to server";
+"GENERIC_VIEW_CONNECTION_ERROR" = "Δεν ήταν δυνατή η σύνδεση στο διακομιστή";
