@@ -118,7 +118,7 @@ extension DispatchQueue {
         }
         
         private func isMainQueue() -> Bool {
-            return DispatchQueue.main.getSpecific(key: Self.key) == Self.value
+            return DispatchQueue.getSpecific(key: Self.key) == Self.value
         }
         
         func schedule(options: SchedulerOptions?, _ action: @escaping () -> Void) {
