@@ -43,10 +43,11 @@ final class FeedViewAdapter: ResourceView {
 extension UIImage {
     struct InvalidImageData: Error {}
     
-    static func tryMake(_ data: Data) -> UIImage {
+    static func tryMake(_ data: Data) throws -> UIImage {
         if let image = UIImage(data: data) {
             return image
         }
+        
         throw InvalidImageData()
     }
 }
