@@ -386,10 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEB42677D541004CA150 /* UIView+Shimmering.swift */,
-				A75E7B2B2684D5A50075E123 /* UITableView+Dequeueing.swift */,
 				A75E7B2D2684D7270075E123 /* UIImageView+Animations.swift */,
-				A75E7B4E268A26750075E123 /* UIRefreshControl+Helpers.swift */,
-				A7B7057826B3007000AAA833 /* UITableView+HeaderSizing.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -416,7 +413,6 @@
 		A7A3DEBA2677FE79004CA150 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7C2ACC52675B3A2004A6D61 /* ListViewController.swift */,
 				A7A3DED126780C19004CA150 /* FeedImageCellController.swift */,
 			);
 			path = Controllers;
@@ -427,7 +423,6 @@
 			children = (
 				A75E7B4B268A25AB0075E123 /* Helpers */,
 				A7A3DEB226779E85004CA150 /* FeedImageCell.swift */,
-				A75E7B49268A228D0075E123 /* ErrorView.swift */,
 				A75E7B272684BFCA0075E123 /* Feed.storyboard */,
 				A75E7B292684C08B0075E123 /* Feed.xcassets */,
 			);
@@ -557,6 +552,42 @@
 			path = snapshots;
 			sourceTree = "<group>";
 		};
+		A7B7060E26C60C6C00AAA833 /* Share UI */ = {
+			isa = PBXGroup;
+			children = (
+				A7B7061126C60CA600AAA833 /* Helpers */,
+				A7B7061026C60C8600AAA833 /* Views */,
+				A7B7060F26C60C7900AAA833 /* Controllers */,
+			);
+			path = "Share UI";
+			sourceTree = "<group>";
+		};
+		A7B7060F26C60C7900AAA833 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7C2ACC52675B3A2004A6D61 /* ListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A7B7061026C60C8600AAA833 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A75E7B49268A228D0075E123 /* ErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7B7061126C60CA600AAA833 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A75E7B2B2684D5A50075E123 /* UITableView+Dequeueing.swift */,
+				A75E7B4E268A26750075E123 /* UIRefreshControl+Helpers.swift */,
+				A7B7057826B3007000AAA833 /* UITableView+HeaderSizing.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A7C2ABE3266EADDF004A6D61 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				A7C2AC6226725932004A6D61 /* Info.plist */,
+				A7B7060E26C60C6C00AAA833 /* Share UI */,
 				A7A3DEB92677FE70004CA150 /* Feed UI */,
 			);
 			path = AwesomeFeediOS;
