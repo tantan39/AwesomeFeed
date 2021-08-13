@@ -103,6 +103,7 @@
 		A7C2ACC02675A4E8004A6D61 /* AwesomeFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7F6E75826600E18009B26E8 /* AwesomeFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7C2ACC42675A8F5004A6D61 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7051B892664222F00C46103 /* XCTestCase+MemoryLeakTracking.swift */; };
 		A7C2ACC62675B3A2004A6D61 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2ACC52675B3A2004A6D61 /* ListViewController.swift */; };
+		A7D9C2CA26C6C613008CB377 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9C2C926C6C613008CB377 /* CellController.swift */; };
 		A7DC32D526666DEF0063A0BD /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC32D426666DEF0063A0BD /* CacheFeedUseCaseTests.swift */; };
 		A7DC32D82666BEF70063A0BD /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC32D72666BEF60063A0BD /* LocalFeedLoader.swift */; };
 		A7DC32DA2666BFEC0063A0BD /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC32D92666BFEC0063A0BD /* FeedStore.swift */; };
@@ -275,6 +276,7 @@
 		A7C2AC6726725932004A6D61 /* AwesomeFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C2AC6E26725933004A6D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C2ACC52675B3A2004A6D61 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A7D9C2C926C6C613008CB377 /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 		A7DC32D426666DEF0063A0BD /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		A7DC32D72666BEF60063A0BD /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		A7DC32D92666BFEC0063A0BD /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				A7C2ACC52675B3A2004A6D61 /* ListViewController.swift */,
+				A7D9C2C926C6C613008CB377 /* CellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				A7B7057926B3007000AAA833 /* UITableView+HeaderSizing.swift in Sources */,
 				A75E7B4A268A228D0075E123 /* ErrorView.swift in Sources */,
 				A75E7B4F268A26750075E123 /* UIRefreshControl+Helpers.swift in Sources */,
+				A7D9C2CA26C6C613008CB377 /* CellController.swift in Sources */,
 				A7A3DEB52677D541004CA150 /* UIView+Shimmering.swift in Sources */,
 				A75E7B2C2684D5A50075E123 /* UITableView+Dequeueing.swift in Sources */,
 				A7C2ACC62675B3A2004A6D61 /* ListViewController.swift in Sources */,
