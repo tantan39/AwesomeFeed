@@ -8,7 +8,7 @@
 import UIKit
 import AwesomeFeediOS
 
-extension FeedViewController {
+extension ListViewController {
     func simulateUserInitiatedFeedReload() {
         refreshControl?.simulatePullToRefresh()
     }
