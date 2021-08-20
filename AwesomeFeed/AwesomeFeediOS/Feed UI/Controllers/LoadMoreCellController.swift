@@ -29,6 +29,11 @@ public class LoadMoreCellController: NSObject, UITableViewDataSource, UITableVie
         guard !cell.isLoading else { return }
         self.callback()
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard !cell.isLoading else { return }
+        self.callback()
+    }
 }
 
 extension LoadMoreCellController: ResourceLoadingView, ResourceErrorView {
