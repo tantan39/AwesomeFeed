@@ -38,6 +38,7 @@
 		A7C22384269CC96100B8D297 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C22383269CC96100B8D297 /* XCTestCase+FeedImageDataLoader.swift */; };
 		A7D9C2D526CAAA7E008CB377 /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9C2D426CAAA7E008CB377 /* CommentsUIIntegrationTests.swift */; };
 		A7D9C2D726CAACF7008CB377 /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9C2D626CAACF7008CB377 /* CommentsUIComposer.swift */; };
+		A7D9C32726D1CC03008CB377 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9C32626D1CC02008CB377 /* NullStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		A7C22383269CC96100B8D297 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		A7D9C2D426CAAA7E008CB377 /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
 		A7D9C2D626CAACF7008CB377 /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
+		A7D9C32626D1CC02008CB377 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				A7C223352697CC3100B8D297 /* AppDelegate.swift */,
 				A7C223372697CC3100B8D297 /* SceneDelegate.swift */,
+				A7D9C32626D1CC02008CB377 /* NullStore.swift */,
 				A7B705D226BC2AA800AAA833 /* CombineHelpers.swift */,
 				A7B7055226AF522600AAA833 /* FeedUIComposer.swift */,
 				A7D9C2D626CAACF7008CB377 /* CommentsUIComposer.swift */,
@@ -290,6 +293,7 @@
 			files = (
 				A7C2233A2697CC3100B8D297 /* ViewController.swift in Sources */,
 				A7C223362697CC3100B8D297 /* AppDelegate.swift in Sources */,
+				A7D9C32726D1CC03008CB377 /* NullStore.swift in Sources */,
 				A7B705D326BC2AA800AAA833 /* CombineHelpers.swift in Sources */,
 				A7B7055426AF522600AAA833 /* FeedViewAdapter.swift in Sources */,
 				A7D9C2D726CAACF7008CB377 /* CommentsUIComposer.swift in Sources */,
