@@ -27,6 +27,6 @@ class NullStore: FeedStore & FeedImageDataStore {
     func retrieve(dataForURL url: URL, completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
         completion(.success(.none))
     }
-    
-    
 }
+
+
