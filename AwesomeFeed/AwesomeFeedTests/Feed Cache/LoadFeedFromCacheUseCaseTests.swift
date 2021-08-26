@@ -18,7 +18,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
     func test_load_requestsCacheRetrieval() {
         let (sut, store) = makeSUT()
         
-        sut.load(completion: { _ in})
+        _ = try? sut.load()
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
     }
@@ -77,7 +77,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
     func test_load_hasNoSideEffectOnRetrievalError() {
         let (sut, store) = makeSUT()
         
-        sut.load(completion: { _ in })
+        _ = try? sut.load()
         store.completeRetrieval(with: anyError())
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
@@ -86,7 +86,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
     func test_load_hasNoSideEffectsOnEmptyCache() {
         let (sut, store) = makeSUT()
         
-        sut.load(completion: { _ in })
+        _ = try? sut.load()
         store.completeRetrievalWithEmptyCache()
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
@@ -98,7 +98,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         let nonExpiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: 1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.load(completion: { _ in })
+        _ = try? sut.load()
         store.completeRetrieval(with: feed.local, timestamp: nonExpiredTimeStamp)
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
@@ -110,7 +110,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         let expirationTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge()
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.load(completion: { _ in })
+        _ = try? sut.load()
         store.completeRetrieval(with: feed.local, timestamp: expirationTimeStamp)
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
@@ -122,7 +122,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         let expiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.load(completion: { _ in })
+        _ = try? sut.load()
         store.completeRetrieval(with: feed.local, timestamp: expiredTimeStamp)
         
         XCTAssertEqual(store.receiveMessages, [.retrieve])
@@ -137,25 +137,20 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         return (sut, store)
     }
     
-    private func expect(_ sut: LocalFeedLoader, toCompleteWith expectedResult: LocalFeedLoader.LoadResult, when action: @escaping () -> Void, file: StaticString = #filePath, line: UInt = #line) {
-        let exp = expectation(description: "Waiting for load completion")
-
+    private func expect(_ sut: LocalFeedLoader, toCompleteWith expectedResult: Result<[FeedImage], Error>, when action: @escaping () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
         
-        sut.load(completion: { receiveResult in
-            switch (receiveResult, expectedResult) {
-            case let (.success(receiveResult), .success(expectedResult)):
-                XCTAssertEqual(receiveResult, expectedResult, file: file, line: line)
-                
-            case let (.failure(receiveError), .failure(expectedError)):
-                XCTAssertEqual(receiveError as NSError, expectedError as NSError, file: file, line: line)
-            default:
-                XCTFail("Expected failure, got \(receiveResult), got \(expectedResult) instead")
-            }
-            exp.fulfill()
-        })
+        let receiveResult = Result { try sut.load() }
+    
+        switch (receiveResult, expectedResult) {
+        case let (.success(receiveResult), .success(expectedResult)):
+            XCTAssertEqual(receiveResult, expectedResult, file: file, line: line)
+            
+        case let (.failure(receiveError), .failure(expectedError)):
+            XCTAssertEqual(receiveError as NSError, expectedError as NSError, file: file, line: line)
+        default:
+            XCTFail("Expected failure, got \(receiveResult), got \(expectedResult) instead")
+        }
         
-        wait(for: [exp], timeout: 1.0)
-
     }
 }
