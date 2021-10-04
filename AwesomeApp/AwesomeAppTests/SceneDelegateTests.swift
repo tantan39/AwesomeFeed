@@ -11,14 +11,13 @@ import AwesomeFeediOS
 class SceneDelegateTests: XCTestCase {
     
     func test_configureWindow_setsWindowKeyAndVisible() {
-        let window = UIWindow()
-        let sut = SceneDelegate()
-        
-        sut.window = window
-        sut.configureWindow()
-        
-        XCTAssertTrue(window.isKeyWindow, "Expected window to be the key window")
-        XCTAssertFalse(window.isHidden, "Expected window to be visible")
+        let window = UIWindowSpy()
+         let sut = SceneDelegate()
+         sut.window = window
+         
+         sut.configureWindow()
+         
+         XCTAssertEqual(window.makeKeyAndVisibleCallCount, 1, "Expected to make window key and visible")
     }
     
     func test_configureWindow_configuresRootViewController() {
@@ -33,4 +32,12 @@ class SceneDelegateTests: XCTestCase {
         XCTAssertNotNil(rootNavigation, "Expected a navigation controller as root, got \(String(describing: root)) instead")
         XCTAssertTrue(topController is ListViewController, "Expected a feed controller as top view controller, got \(String(describing: topController)) instead")
     }
+}
+
+private class UIWindowSpy: UIWindow {
+  var makeKeyAndVisibleCallCount = 0
+  
+  override func makeKeyAndVisible() {
+    makeKeyAndVisibleCallCount = 1
+  }
 }

@@ -65,7 +65,11 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
             snapshot.appendItems(cellControllers, toSection: section)
         }
         
-        dataSource.apply(snapshot)
+        if #available(iOS 15.0, *) {
+            dataSource.applySnapshotUsingReloadData(snapshot)
+        } else {
+            dataSource.apply(snapshot)
+        }
     }
     
     public func display(_  viewModel: ResourceLoadingViewModel) {
