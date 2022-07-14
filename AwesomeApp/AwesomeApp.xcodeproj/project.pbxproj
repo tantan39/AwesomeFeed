@@ -30,8 +30,8 @@
 		A7C2233A2697CC3100B8D297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223392697CC3100B8D297 /* ViewController.swift */; };
 		A7C2233F2697CC3700B8D297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C2233E2697CC3700B8D297 /* Assets.xcassets */; };
 		A7C223422697CC3700B8D297 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C223402697CC3700B8D297 /* LaunchScreen.storyboard */; };
-		A7C223672697D88B00B8D297 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223662697D88B00B8D297 /* AwesomeFeed.framework */; };
-		A7C223692697D88B00B8D297 /* AwesomeFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223682697D88B00B8D297 /* AwesomeFeediOS.framework */; };
+		A7C223672697D88B00B8D297 /* AwesomeFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223662697D88B00B8D297 /* AwesomeFeed.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A7C223692697D88B00B8D297 /* AwesomeFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C223682697D88B00B8D297 /* AwesomeFeediOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A7C223722698AF9C00B8D297 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223712698AF9C00B8D297 /* XCTestCase+MemoryLeakTracking.swift */; };
 		A7C223742698B01900B8D297 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C223732698B01900B8D297 /* SharedTestHelpers.swift */; };
 		A7C22382269CC8D600B8D297 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C22381269CC8D600B8D297 /* FeedImageDataLoaderSpy.swift */; };
@@ -470,9 +470,11 @@
 		A7C2235D2697CC3700B8D297 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FL29S3YYFY;
 				INFOPLIST_FILE = AwesomeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,9 +490,11 @@
 		A7C2235E2697CC3700B8D297 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FL29S3YYFY;
 				INFOPLIST_FILE = AwesomeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
